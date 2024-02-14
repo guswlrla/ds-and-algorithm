@@ -15,6 +15,13 @@ class Node():
 
 # 클래스 끝
 def printNodes(start): # 클래스의 멤버함수 x
+    curr = start
+    if curr == None: return # 함수를 빠져나감
+    print(curr.data, end = ' -> ')
+    while curr.link != None:
+        curr = curr.link # 내 노드 다음의 노드가 current가 됨
+        print(curr.data, end = ' -> ') # end -> 로 해서 enter가 없음
+    print() # enter 추가
 
 dataArray = ['다현', '정연', '쯔위', '사나', '지효']
 
@@ -31,13 +38,3 @@ if __name__ == '__main__':
         memory.append(node)
 
     printNodes(head)
-
-    curr = start
-    if curr == None: return # 함수를 빠져나감
-    print(curr.data, end = ' -> ')
-    while curr.link != None:
-        curr = curr.link # 내 노드 다음의 노드가 current가 됨
-        print(curr.data, end = ' -> ') # end -> 로 해서 enter가 없음
-    print() # enter 추가
-
-    ## 수정해라,,,
