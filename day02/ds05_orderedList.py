@@ -29,17 +29,10 @@ tx = [300, 20, 0]
 
 if __name__ == '__main__':
     print('Simple')
-    pStr = printPoly(px2)
-    print(pStr)
-
-    xVal = int(input('x값 ==> '))
-    pxVal = calcPoly(xVal, px2)
-    print(pxVal)
-
-    print('Multi')
     pStr = printPoly(tx, px)
     print(pStr)
 
     xVal = int(input('x값 ==> '))
+
     pxVal = calcPoly(xVal, tx, px)
     print(pxVal)
