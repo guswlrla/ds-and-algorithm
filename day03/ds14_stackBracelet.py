@@ -4,7 +4,7 @@
 # 스택 풀 확인함수
 def isStackFull():
     global SIZE, stack, top
-    if top == (SIZE-1):
+    if top == (SIZE - 1):
         return True # 스택이 꽉 찼음
     else:
         return False
@@ -30,16 +30,16 @@ def isStackEmpty():
 # 스택 데이터 추출함수
 def pop():
     global SIZE, stack, top
-    if isStackEmpty == True:
+    if isStackEmpty() == True:
         print('스택이 비었습니다.')
         return None
     else:
         data = stack[top]
         stack[top] = None
-        top = -1
+        top -= 1
         return data
 
-# 스택 데이터 확인함수
+# 스택 최종데이터 확인함수
 def peek():
     global stack, top
     if isStackEmpty() == True:
@@ -85,5 +85,3 @@ if __name__ == '__main__':
     for expr in arr:
         top = -1
         print(f'{expr} ==> {checkBracket(expr)}')
-
-## tnwjd
