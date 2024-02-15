@@ -1,5 +1,5 @@
 # date : 2024-02-15
-# desc : 원형큐 일반구현 원형큐에서는 rear|front % SIZE 개념이 핵심!
+# desc : 원형큐 일반구현 / 원형큐에서는 rear|front % SIZE 개념이 핵심!
 
 # Queue 풀 확인함수
 def isQueueFull():
