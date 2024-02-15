@@ -2,8 +2,8 @@
 # desc : 큐 일반구현
 
 # Queue 풀 확인함수
-def isQueueFull():
-    global SIZE, rear, front, rear
+def isQueueFull(): # 개선버전으로 변경
+    global SIZE, queue, front, rear
     if rear != (SIZE - 1): # 큐가 아직 빈상태
         return False
     elif rear == (SIZE-1) and front == -1: # 큐가 꽉 찬 상태
@@ -40,7 +40,7 @@ def deQueue():
     global queue, front
     if isQueueEmpty() == True:
         print('큐가 비었습니다.')
-        return # 함수탈출
+        return
     else:
         front += 1
         data = queue[front]
@@ -64,7 +64,7 @@ front = rear = -1
 
 if __name__ == '__main__': # 메인시작
     while True:
-        select = input('삽입(e), 추출(d), 확인(p), 종료(x) ')
+        select = input('삽입(e), 추출(d), 확인(p), 종료(x) > ')
 
         if select.lower() == 'e':
             data = input('입력 데이터 > ')
