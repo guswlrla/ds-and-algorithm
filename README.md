@@ -40,10 +40,15 @@
 ## 5일차
 - 파이썬 자료구조/알고리즘
     - 그래프
-    - 재귀호출
-    - 정렬
-    - 검색
+
+    ![그래프](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/graph02.png)
 
 ## 6일차
+- 파이썬 자료구조/알고리즘
+    - 재귀호출
+    - 정렬
 
 ## 7일차
+- 파이썬 자료구조/알고리즘
+    - 검색
+- 코딩테스트
