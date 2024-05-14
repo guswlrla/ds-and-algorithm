@@ -1,11 +1,11 @@
 # 자료구조와 알고리즘 2024
 부경대 IoT 개발자 파이썬 자료구조와 알고리즘 학습 리포지토리
 
-## 1일차
+## :pushpin 1일차
 - 자료구조, 알고리즘 개요
 - 파이썬 기초 복습, 함수까지
 
-## 2일차
+## :pushpin 2일차
 - 파이썬 기초 복습
 
 ![자료구조](https://t1.daumcdn.net/cfile/tistory/23202B4C53FDC5600C)
@@ -16,7 +16,7 @@
 
     ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png)
 
-## 3일차
+## :pushpin 3일차
 - 파이썬 자료구조
     - 단순 연결 리스트 다시
     - 원형 연결 리스트(패스) : 마지막 노드가 첫 노드와 연결
@@ -30,20 +30,20 @@
     ![queue](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/queue.png)
     
 
-## 4일차
+## :pushpin 4일차
 - 파이썬 자료구조
     - 큐 다시
     - 이진트리
 
     ![이진트리](https://kahee.github.io//assets/post_img/tree3.png)
 
-## 5일차
+## :pushpin 5일차
 - 파이썬 자료구조/알고리즘
     - 그래프
 
     ![그래프](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/graph02.png)
 
-## 6일차
+## :pushpin 6일차
 - 파이썬 자료구조/알고리즘
     - 재귀호출
     - 정렬
@@ -55,7 +55,7 @@
     ![정렬](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/sorting.jpg)
 
 
-## 7일차
+## :pushpin 7일차
 - 파이썬 자료구조/알고리즘
     - 검색
 - 코딩테스트
