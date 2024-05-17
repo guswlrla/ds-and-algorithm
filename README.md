@@ -173,6 +173,7 @@
 
         - 노드 삽입과정
             ```
+            # 다현 정연 재남 쯔위 사나 지효
             newNode = Node('재남')
             newNode.link = node2.link
             node2.link = newNode
