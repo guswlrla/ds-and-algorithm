@@ -106,7 +106,9 @@
                 kakaotalk[i-1] = None 
 
             kakaotalk[pos] = friend
-        
+        ```
+
+        ```
         # 사용 예시
         insert_data(2, '솔라') # ["다현", "정연", "솔라", "쯔위", "사나", "지효"]
         ```
@@ -128,6 +130,7 @@
                 kakaotalk[i] = None
     
             del(kakaotalk[size-1]) # 배열의 맨 마지막값 삭제
+        ```
         
         # 사용 예시
         delete_data(2) # ["다현", "정연", "쯔위", "사나", "지효"]
@@ -250,7 +253,6 @@
     - 큐의 `머리`는 저장된 데이터를 첫 번째를 가리킴, 큐의 `꼬리`는 마지막 데이터를 가리킴
     - 첫 번째 데이터 앞을 front가 가리켜야 함
 
-
         ```
         # 큐 선언
         queue = [None for _ in range(5)]
@@ -302,9 +304,25 @@
     
 
 ## 4일차
-- 파이썬 자료구조
-    - 큐 다시
-    - 이진트리
+1. 큐 복습
+
+2. 이진트리
+    - 트리의 맨 위를 `뿌리(Root)`라고 함
+    - 루트를 레벨 0으로 두고 아래로 내려올수록 레벨이 1씩 증가함
+    - 트리에서 각 위치를 `노드(Node)`라고 함
+    - 위 노드와 바로 아래 노드의 관계를 `부모-자식관계`라고 함
+    - 자식 노드의 개수를 `차수(Degree)`라고 함
+    - 트리는 `왼쪽 자식(Left child)`과 `오른쪽 자식(Right Child)`으로 구성
+
+    - 클래스를 이용한 표현
+        ```
+        class TreeNode():
+            left = data = right = None
+            def __init__(self) -> None:
+                self.left = self.right = self.data = None
+        ```
+
+    - 
 
     ![이진트리](https://kahee.github.io//assets/post_img/tree3.png)
 
