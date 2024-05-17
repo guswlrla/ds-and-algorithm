@@ -347,7 +347,7 @@
         ```
 
     - 이진트리 순회(traversal)
-    
+
         - 전위순회 : 데이터를 먼저 처리
         ```
         def preorder(node):
@@ -383,10 +383,29 @@
     <!-- ![이진트리](https://kahee.github.io//assets/post_img/tree3.png) -->
 
 ## 5일차
-- 파이썬 자료구조/알고리즘
-    - 그래프
+1. 그래프 : 여러 노드가 서로 연결된 자료구조
 
-    ![그래프](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/graph02.png)
+    - 루트에서 하위 노드 방향으로 가는 트리와는 달리, 여러 노드가 연결되어 있을 수 있음
+    - 그래프의 종료
+        - 무방향 그래프 : 간선은 연결하는 두 정점을 ()로 표현
+
+        ```
+        E(G1) = { (A, B), (A, C), (A, D), (B, C), (C, D) }
+        E(G2) = { (A, B), (B, D), (D, C) }
+        ```
+
+        - 방향 그래프 : 간선은 연결하는 두 정점을 <>로 묶어 표현
+
+        ```
+        E(G1) = { <A, B>, <A, C>, <D, A>, <D, C> }
+        E(G2) = { <A, B>, <C, B>, <C, D> }
+        ```
+    
+    - 그래프 순회 방식 : 그래프의 모든 정점을 한 번씩 방문
+        - 깊이 우선 탐색(DFS)
+        - 너비 우선 탐색(BFS) 
+
+    <!-- ![그래프](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/graph02.png) -->
 
 ## 6일차
 - 파이썬 자료구조/알고리즘
