@@ -238,7 +238,7 @@
 
         # 현재 스택확인
         for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
-        print(stack[i]) # None None None None None 순
+            print(stack[i]) # None None None None None 순
         ```
 
     <!-- ![stack](https://cs.lmu.edu/~ray/images/stack.gif) -->
