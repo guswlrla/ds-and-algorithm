@@ -140,45 +140,40 @@
 
         ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png)
     
-    - 노드(데이터) 삽입
-        - 삽입할 노드 생성
-        - 새 노드의 링크에 이전 노드의 링크 복사
-        - 이전 노드의 링크에 새 노드 지정
+    - 단순 연결 리스트 생성과정
 
-            ```
-            # 노드 생성(노드는 클래스를 사용하여 구현)
-            class Node():
-                # data, link 두 개의 멤버변수 존재
-                # 생성자 추가 
-                def __init__(self): # 생성자 함수 : 데이터형을 생성할 때, 자동으로 실행
-                    self.data = None
-                    self.link = None
-            
-            # 노드 생성 및 확인
-            node1 = Node('다현')
-            print(node1.data, end = ' ')
-            print(node1.link) # 다현 None
+        ```
+        # 노드 생성(노드는 클래스를 사용하여 구현)
+        class Node():
+            # data, link 두 개의 멤버변수 존재
+            # 생성자 추가 
+            def __init__(self): # 생성자 함수 : 데이터형을 생성할 때, 자동으로 실행
+                self.data = None
+                self.link = None
+          
+        # 노드 생성 및 확인
+        node1 = Node('다현')
+        print(node1.data, end = ' ')
+        print(node1.link) # 다현 None
 
-            # 노드 연결
-            node2 = Node('정연')
-            node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
+        # 노드 연결
+        node2 = Node('정연')
+        node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
+        ...
+        node5 = Node('지효')
+        node4.link = node5
 
-            ...
+        # 단순연결리스트 출력방법
+        current = node1
+        print(current.data, end = ' ') # 첫 번째 노드를 현재(current)로 지정하고 출력
+        while current.link != None: # 노드가 비어있지 않은동안
+            current = current.link # 다음 노드를 현재노드로 지정
+            print(current.data, end = ' ')
+        ```
+    - 노드 삽입과정
+        ```
 
-            node5 = Node('지효')
-            node4.link = node5
-
-            # 단순연결리스트 출력방법
-            current = node1
-            print(current.data, end = ' ') # 첫 번째 노드를 현재(current)로 지정하고 출력
-            while current.link != None: # 노드가 비어있지 않은동안
-                current = current.link # 다음 노드를 현재노드로 지정
-                print(current.data, end = ' ')
-            ```
-
-    - 노드(데이터) 삭제
-        - 삭제할 노드의 링크를 바로 앞 노드의 링크로 복사
-        - 삭제할 노드를 삭제
+        ```
 
 4. 선형리스트와 연결리스트의 차이
 
