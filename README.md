@@ -166,7 +166,7 @@
             ```
 
         - 노드 삽입과정
-
+        
             ```
             # 다현 정연 재남 쯔위 사나 지효
             newNode = Node("재남")
@@ -200,46 +200,50 @@
 
         - 스택 생성과정
 
-            ```
-            # 스택 선언
-            stack = [None for _ in range(5)]
-            top = -1
+        ```
+        # 스택 선언
+        stack = [None for _ in range(5)]
+        top = -1
+        ```
 
-            # push
-            top += 1 # 0
-            stack[top] = "커피"
-            top += 1 # 1
-            stack[top] = "녹차"
-            top += 1 # 2
-            stack[top] = "꿀물"
+        - 스택 삽입과정
 
-            # 현재 스택확인
-            for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
-                print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
-            ```
+        ```
+        # push
+        top += 1 # 0
+        stack[top] = "커피"
+        top += 1 # 1
+        stack[top] = "녹차"
+        top += 1 # 2
+        stack[top] = "꿀물"
+
+        # 현재 스택확인
+        for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
+            print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
+        ```
 
         - 추출 과정
 
-            ```
-            # pop
-            stack = ["커피", "녹차", "꿀물", None, None]
+        ```
+        # pop
+        stack = ["커피", "녹차", "꿀물", None, None]
 
-            data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
-            stack[top] = None
-            top -= 1
+        data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
+        stack[top] = None
+        top -= 1
 
-            data = stack[top] # 녹차
-            stack[top] = None
-            top -= 1
+        data = stack[top] # 녹차
+        stack[top] = None
+        top -= 1
 
-            data = stack[top] # 커피
-            stack[top] = None
-            top -= 1
+        data = stack[top] # 커피
+        stack[top] = None
+        top -= 1
 
-            # 현재 스택확인
-            for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
-                print(stack[i]) # None None None None None 순
-            ```
+        # 현재 스택확인
+        for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
+            print(stack[i]) # None None None None None 순
+        ```
 
     <!-- ![stack](https://cs.lmu.edu/~ray/images/stack.gif) -->
 
