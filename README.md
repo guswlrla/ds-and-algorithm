@@ -100,6 +100,7 @@
     
         kakaotalk.append(None) # 빈칸추가
         size = len(kakaotalk) # 배열의 현재크기
+
         # 삽입위치까지 데이터를 하나씩 뒤로 보냄
         for i in range(size-1, pos, -1): # 역순으로 맨뒤에서 부터
             kakaotalk[i] = kakaotalk[i-1]
@@ -112,6 +113,22 @@
         ```
 
     - 데이터 삭제시 빈칸을 그대로 두지않고 뒤의 요소들을 앞으로 한칸씩 이동
+
+        ```
+        def delete_data(pos): # 데이터 삭제시는 위치값만 
+            if pos < 0 or pos >= len(kakaotalk): # 책에는 > 아님. >=로 변경해야 함
+                print('데이터 삭제범위 초과')
+                return
+    
+        size = len(kakaotalk)
+        kakaotalk[pos] = None # 데이터 삭제
+
+        for i in range(pos+1, size): 
+            kakaotalk[i-1] = kakaotalk[i] # 뒤에 값을 앞으로
+            kakaotalk[i] = None
+    
+        del(kakaotalk[size-1]) # 배열의 맨 마지막값 삭제
+        ```
 
 3. 단순 연결 리스트 = 파이썬의 list와 동일
 
