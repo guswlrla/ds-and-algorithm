@@ -89,50 +89,66 @@
     - 빈자리에 요소 삽입
 
         ```
+        kakaotalk = ['다현', '정연', '쯔위', '사나', '지효']
+
         # 선형리스트에 데이터를 삽입하는 함수
-
-        katok = ['다현', '정연', '쯔위', '사나', '지효']
-
         def insert_data(pos, friend):
             if pos < 0 or pos > len(kakaotalk): 
                 print('데이터 삽입범위 초과')
                 return # 함수를 빠져나감
     
-        kakaotalk.append(None) # 빈칸추가
-        size = len(kakaotalk) # 배열의 현재크기
+            kakaotalk.append(None) # 빈칸추가, ['다현', '정연', '쯔위', '사나', '지효', None]
+            size = len(kakaotalk) # 배열의 현재크기
 
-        # 삽입위치까지 데이터를 하나씩 뒤로 보냄
-        for i in range(size-1, pos, -1): # 역순으로 맨뒤에서 부터
-            kakaotalk[i] = kakaotalk[i-1]
-            kakaotalk[i-1] = None
+            # 삽입위치까지 데이터를 하나씩 뒤로 보냄
+            for i in range(size-1, pos, -1): # 역순, None을 pos까지 옮기기
+                kakaotalk[i] = kakaotalk[i-1]
+                kakaotalk[i-1] = None 
 
-        kakaotalk[pos] = friend
-
+            kakaotalk[pos] = friend
+        
+        # 사용 예시
         insert_data(2, '솔라') # ['다현', '정연', '솔라', '쯔위', '사나', '지효']
-        insert_data(6, '문별') # ['다현', '정연', '솔라', '쯔위', '사나', '지효', '문별']
         ```
 
     - 데이터 삭제시 빈칸을 그대로 두지않고 뒤의 요소들을 앞으로 한칸씩 이동
 
         ```
+        # 선형리스트에서 데이터를 삭제하는 함수
         def delete_data(pos): # 데이터 삭제시는 위치값만 
-            if pos < 0 or pos >= len(kakaotalk): # 책에는 > 아님. >=로 변경해야 함
+            if pos < 0 or pos >= len(kakaotalk): 
                 print('데이터 삭제범위 초과')
                 return
     
-        size = len(kakaotalk)
-        kakaotalk[pos] = None # 데이터 삭제
+            size = len(kakaotalk)
+            kakaotalk[pos] = None # 데이터 삭제, ['다현', '정연', None, '쯔위', '사나', '지효']
 
-        for i in range(pos+1, size): 
-            kakaotalk[i-1] = kakaotalk[i] # 뒤에 값을 앞으로
-            kakaotalk[i] = None
+            for i in range(pos+1, size): 
+                kakaotalk[i-1] = kakaotalk[i] # None을 배열 끝으로 옮기기
+                kakaotalk[i] = None
     
-        del(kakaotalk[size-1]) # 배열의 맨 마지막값 삭제
+            del(kakaotalk[size-1]) # 배열의 맨 마지막값 삭제
+        
+        # 사용 예시
+        delete_data(2) # ['다현', '정연', '쯔위', '사나', '지효']
         ```
 
 3. 단순 연결 리스트 = 파이썬의 list와 동일
 
-    ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png)
+    - 데이터와 링크로 구성된 항목인 `노드(Node)`로 구성
+    - 단순 연결 리스트는 첫 번째 노드를 가리키는 `헤드(Head)`를 사용(헤드를 이용하여 처음부터 다시 진행가능)
+        ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png)
+    
+    - 노드(데이터) 삽입
+        - 삽입할 노드 생성
+        - 새 노드의 링크에 이전 노드의 링크 복사
+        - 이전 노드의 링크에 새 노드 지정
+    - 노드(데이터) 삭제
+        - 삭제할 노드의 링크를 바로 앞 노드의 링크로 복사
+        - 삭제할 노드를 삭제
+
+- 선형리스트 : 메모리 저장장소의 최적화는 있지만, 삽입/삭제 시 오버헤드 존재(거의 사용x)
+- 연결리스트 : 메모리 공간 오버헤드는 존재하지만, 삽입/삭제 시 처리시간 최적화
 
 ## 3일차
 - 파이썬 자료구조
