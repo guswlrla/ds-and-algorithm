@@ -245,7 +245,58 @@
 
 4. 큐 : First In First Out (FIFO)
 
-    ![queue](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/queue.png)
+    - 큐는 양쪽이 뚫려있는 구조, 한쪽에서는 삽입만 진행되고 다른 쪽에서는 추출만 진행
+    - 큐에 데이터를 삽입하는 동작을 `enQueue(인큐)`, 데이터를 추출하는 동작을 `deQueue(데큐)`라고 함
+    - 큐의 `머리`는 저장된 데이터를 첫 번째를 가리킴, 큐의 `꼬리`는 마지막 데이터를 가리킴
+    - 첫 번째 데이터 앞을 front가 가리켜야 함
+
+
+        ```
+        # 큐 선언
+        queue = [None for _ in range(5)]
+        front = rear = -1 # 둘 다 -1이면 초기상태이고, 큐가 비었다고 해석
+
+        # enqueue 구현
+        rear += 1
+        queue[rear] = "화사"
+        rear += 1
+        queue[rear] = '솔라'
+        rear += 1
+        queue[rear] = '문별'
+
+        print('[out] ', end=' <- ')
+        for i in range(0, len(queue), 1):
+            print(queue[i], end=' <- ')
+
+        print('[in]') # [out]  <- 화사 <- 솔라 <- 문별 <- None <- None <- [in]
+
+        # dequeue 구현
+        queue = ["화사", "솔라", "문별", None, None]
+        front = -1
+        rear = 2
+
+        front += 1
+        data = queue[front]
+        queue[front] = None
+        print(f'dequeue -> {data}') # 화사
+
+        front += 1
+        data = queue[front]
+        queue[front] = None
+        print(f'dequeue -> {data}') # 솔라
+
+        front += 1
+        data = queue[front]
+        queue[front] = None
+        print(f'dequeue -> {data}') # 문별
+
+        front += 1
+        data = queue[front]
+        queue[front] = None
+        print(f'dequeue -> {data}') # None
+        ```
+
+    <!-- ![queue](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/queue.png) -->
     
 
 ## 4일차
