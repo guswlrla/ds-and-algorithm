@@ -254,12 +254,14 @@
     - 큐의 `머리`는 저장된 데이터를 첫 번째를 가리킴, 큐의 `꼬리`는 마지막 데이터를 가리킴
     - 첫 번째 데이터 앞을 front가 가리켜야 함
 
+        - 큐 선언과정
         ```
-        # 큐 선언
         queue = [None for _ in range(5)]
         front = rear = -1 # 둘 다 -1이면 초기상태이고, 큐가 비었다고 해석
+        ```
 
-        # enqueue 구현
+        - enqueue 구현과정
+        ```
         rear += 1
         queue[rear] = "화사"
         rear += 1
@@ -274,8 +276,8 @@
         print('[in]') # [out]  <- 화사 <- 솔라 <- 문별 <- None <- None <- [in]
         ```
         
+        - dequeue 구현과정
         ```
-        # dequeue 구현
         queue = ["화사", "솔라", "문별", None, None]
         front = -1
         rear = 2
