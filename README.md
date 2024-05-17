@@ -166,6 +166,7 @@
             ```
 
         - 노드 삽입과정
+
             ```
             # 다현 정연 재남 쯔위 사나 지효
             newNode = Node("재남")
@@ -174,6 +175,7 @@
             ```
 
         - 노드 삭제과정
+        
             ```
             node2.link = node3.link # 쯔위의 링크를 정연의 링크로 복사
             del(node3) # 쯔위 삭제
@@ -196,23 +198,27 @@
     - 현재 스택에 들어있는 가장 위의 데이터 위치를 `top`
     - 스택은 배열형태로 구현
 
-        ```
-        # 스택 선언
-        stack = [None for _ in range(5)]
-        top = -1
+        - 스택 생성과정
 
-        # push
-        top += 1 # 0
-        stack[top] = "커피"
-        top += 1 # 1
-        stack[top] = "녹차"
-        top += 1 # 2
-        stack[top] = "꿀물"
+            ```
+            # 스택 선언
+            stack = [None for _ in range(5)]
+            top = -1
 
-        # 현재 스택확인
-        for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
-            print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
-        ```
+            # push
+            top += 1 # 0
+            stack[top] = "커피"
+            top += 1 # 1
+            stack[top] = "녹차"
+            top += 1 # 2
+            stack[top] = "꿀물"
+
+            # 현재 스택확인
+            for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
+                print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
+            ```
+
+        - 추출 과정
 
         ```
         # pop
