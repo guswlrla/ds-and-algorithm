@@ -144,13 +144,14 @@
         - 삽입할 노드 생성
         - 새 노드의 링크에 이전 노드의 링크 복사
         - 이전 노드의 링크에 새 노드 지정
+
             ```
             # 노드 생성(노드는 클래스를 사용하여 구현)
             class Node():
                 # data, link 두 개의 멤버변수 존재
                 # 생성자 추가 
-                def __init__(self, name): # 생성자 함수 : 데이터형을 생성할 때, 자동으로 실행
-                    self.data = name
+                def __init__(self): # 생성자 함수 : 데이터형을 생성할 때, 자동으로 실행
+                    self.data = None
                     self.link = None
             
             # 노드 생성 및 확인
@@ -161,6 +162,18 @@
             # 노드 연결
             node2 = Node('정연')
             node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
+
+            ...
+
+            node5 = Node('지효')
+            node4.link = node5
+
+            # 단순연결리스트 출력방법
+            current = node1
+            print(current.data, end = ' ') # 첫 번째 노드를 현재(current)로 지정하고 출력
+            while current.link != None: # 노드가 비어있지 않은동안
+                current = current.link # 다음 노드를 현재노드로 지정
+                print(current.data, end = ' ')
             ```
 
     - 노드(데이터) 삭제
