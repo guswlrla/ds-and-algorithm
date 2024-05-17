@@ -408,18 +408,86 @@
     <!-- ![그래프](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/graph02.png) -->
 
 ## 6일차
-- 파이썬 자료구조/알고리즘
-    - 재귀호출
-    - 정렬
-        - 선택정렬 Selection Sort : 최소값을 찾아서 맨 앞으로 보내는 정렬
-        - 삽입정렬 Insertion Sort : 기준값 기준으로 앞뒤로 보내는 정렬
-        - 버블정렬 Bubble Sort : 기준값 기준으로 제일 큰 값을 뒤로 보내는 정렬
-        - 퀵정렬 Quick Sort : 기준값 기준으로 작은 값 그룹 / 큰 값 그룹 분리한 뒤 다시 정렬 재귀호출
+1. 재귀호출 : 자신을 다시 호출하는 것
 
-    ![정렬](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/sorting.jpg)
+2. 정렬
+    - 선택정렬(Selection Sort) : 최소값을 찾아서 맨 앞으로 보내는 정렬
+
+        ```
+        def selectionSort(ary):
+            n = len(ary)
+            for i in range(0, n-1): # 6
+                minIdx = i
+                for k in range(i+1, n):
+                    if ary[minIdx] > ary[k]:
+                        minIdx = k
+        
+                tmp = ary[i] # 원래있던 (최초 0)
+                ary[i] = ary[minIdx] # minIdx에 있는 최소값을 가져옴
+                ary[minIdx] = tmp 
+
+            return ary  
+        ```
+
+    - 삽입정렬(Insertion Sort) : 기준값 기준으로 앞뒤로 보내는 정렬
+
+        ```
+        def insertionSort(ary):
+            n = len(ary) 
+            for end in range(1, n): # 앞에서 뒤로
+                for cur in range(end, 0, -1): # 뒤에서 앞으로
+                    if ary[cur-1] > ary[cur]:
+                        tmp = ary[cur]
+                        ary[cur] = ary[cur-1]
+                        ary[cur-1] = tmp
+
+            return ary
+        ```
+
+    - 버블정렬(Bubble Sort) : 기준값 기준으로 제일 큰 값을 뒤로 보내는 정렬
+
+        ```
+        def bubbleSort(ary):
+            n = len(ary)
+            for end in range(n-1, 0, -1): # 7부터 1까지 역순
+                for cur in range(0, end):  # 0, 6까지 순차
+                    if ary[cur] > ary[cur+1]: # 앞의 값이 뒤의 값보다 크면 뒤로보냄
+                        tmp = ary[cur]
+                        ary[cur] = ary[cur+1]
+                        ary[cur+1] = tmp
+            return ary
+        ```
+    
+    - 퀵 정렬(Quick Sort) : 기준값 기준으로 왼쪽, 오른쪽 그룹분리한 뒤 다시 정렬
+
+        ```
+        def quickSort(ary):
+            n = len(ary)
+            if n <= 1: return ary # 정렬할 리스트가 1개이하면 정렬필요없음
+
+            pivot = ary[n // 2] # 기준값(중앙값) 지정
+            leftAry, rightAry = [], []
+
+            for data in ary:
+                if data < pivot:
+                    leftAry.append(data)
+                elif data == pivot:
+                    pass
+                else:
+                    rightAry.append(data)
+
+            return quickSort(leftAry) + [pivot] + quickSort(rightAry) # 재귀호출
+        ```
+
+    <!-- ![정렬](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/sorting.jpg) -->
 
 
 ## 7일차
-- 파이썬 자료구조/알고리즘
-    - 검색
-- 코딩테스트
+1. 검색 : 어떤 집합에서 원하는 것을 찾는 것
+    - 검색 결과로 특정 집합의 위치인 인덱스를 알려줌 
+    - 검색의 종류
+        - 순차 검색
+        - 이진 검색
+        - 트리 검색
+
+2. 코딩테스트
