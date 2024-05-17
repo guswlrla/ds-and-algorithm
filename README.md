@@ -310,77 +310,70 @@
 1. 큐 복습
 
 2. 이진트리
-    - 트리의 맨 위를 `뿌리(Root)`라고 함
-    - 루트를 레벨 0으로 두고 아래로 내려올수록 레벨이 1씩 증가함
-    - 트리에서 각 위치를 `노드(Node)`라고 함
-    - 위 노드와 바로 아래 노드의 관계를 `부모-자식관계`라고 함
-    - 자식 노드의 개수를 `차수(Degree)`라고 함
-    - 트리는 `왼쪽 자식(Left child)`과 `오른쪽 자식(Right Child)`으로 구성
+    - 이진트리 생성과정
 
-        - 이진트리 생성과정
+    ```
+    class TreeNode():
+        left = data = right = None
+        def __init__(self) -> None:
+            self.left = self.right = self.data = None
+
+    node1 = TreeNode()
+    node1.data = '화사'
+
+    node2 = TreeNode()
+    node2.data = '솔라'
+    node1.left = node2
+
+    node3 = TreeNode()
+    node3.data = '문별'
+    node1.right = node3
+
+    node4 = TreeNode()
+    node4.data = '휘인'
+    node2.left = node4
+
+    node5 = TreeNode()
+    node5.data = '쯔위'
+    node2.right = node5
+
+    node6 = TreeNode()
+    node6.data = '선미'
+    node3.left = node6
+    ```
+
+    - 이진트리 순회(traversal)
+        - 전위순회 : 데이터를 먼저 처리
+        ```
+        def preorder(node):
+            if node == None: return
+
+            print(node.data, end='->')
+            preorder(node.left)
+            preorder(node.right)
+        ```
+
+        - 중위순회 : 데이터를 중간에 처리
 
         ```
-        class TreeNode():
-            left = data = right = None
-            def __init__(self) -> None:
-                self.left = self.right = self.data = None
+        def inorder(node):
+            if node == None: return
 
-        node1 = TreeNode()
-        node1.data = '화사'
-
-        node2 = TreeNode()
-        node2.data = '솔라'
-        node1.left = node2
-
-        node3 = TreeNode()
-        node3.data = '문별'
-        node1.right = node3
-
-        node4 = TreeNode()
-        node4.data = '휘인'
-        node2.left = node4
-
-        node5 = TreeNode()
-        node5.data = '쯔위'
-        node2.right = node5
-
-        node6 = TreeNode()
-        node6.data = '선미'
-        node3.left = node6
+            inorder(node.left)
+            print(node.data, end='->')
+            inorder(node.right)
         ```
 
-        - 이진트리 순회(traversal)
-            - 전위순회 : 데이터를 먼저 처리
-            ```
-            def preorder(node):
-                if node == None: return
+        - 후위순회 : 데이터를 마지막에 처리
 
-                print(node.data, end='->')
-                preorder(node.left)
-                preorder(node.right)
-            ```
+        ```
+        def postorder(node):
+            if node == None: return
 
-            - 중위순회 : 데이터를 중간에 처리
-
-            ```
-            def inorder(node):
-                if node == None: return
-
-                inorder(node.left)
-                print(node.data, end='->')
-                inorder(node.right)
-            ```
-
-            - 후위순회 : 데이터를 마지막에 처리
-            
-            ```
-            def postorder(node):
-                if node == None: return
-
-                postorder(node.left)
-                postorder(node.right)
-                print(node.data, end='->')
-            ```
+            postorder(node.left)
+            postorder(node.right)
+            print(node.data, end='->')
+        ```
 
     <!-- ![이진트리](https://kahee.github.io//assets/post_img/tree3.png) -->
 
