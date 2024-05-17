@@ -202,44 +202,44 @@
     - 현재 스택에 들어있는 가장 위의 데이터 위치를 `top`
     - 스택은 배열형태로 구현
 
-    ```
-    # 스택 선언
-    stack = [None for _ in range(5)]
-    top = -1
+        ```
+        # 스택 선언
+        stack = [None for _ in range(5)]
+        top = -1
 
-    # push
-    top += 1 # 0
-    stack[top] = "커피"
-    top += 1 # 1
-    stack[top] = "녹차"
-    top += 1 # 2
-    stack[top] = "꿀물"
+        # push
+        top += 1 # 0
+        stack[top] = "커피"
+        top += 1 # 1
+        stack[top] = "녹차"
+        top += 1 # 2
+        stack[top] = "꿀물"
 
-    # 현재 스택확인
-    for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
-        print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
-    ```
+        # 현재 스택확인
+        for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
+            print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
+        ```
 
-    ```
-    # pop
-    stack = ["커피", "녹차", "꿀물", None, None]
+        ```
+        # pop
+        stack = ["커피", "녹차", "꿀물", None, None]
 
-    data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
-    stack[top] = None
-    top -= 1
+        data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
+        stack[top] = None
+        top -= 1
 
-    data = stack[top] # 녹차
-    stack[top] = None
-    top -= 1
+        data = stack[top] # 녹차
+        stack[top] = None
+        top -= 1
 
-    data = stack[top] # 커피
-    stack[top] = None
-    top -= 1
+        data = stack[top] # 커피
+        stack[top] = None
+        top -= 1
 
-    # 현재 스택확인
-    for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
-    print(stack[i]) # None None None None None 순
-    ```
+        # 현재 스택확인
+        for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
+        print(stack[i]) # None None None None None 순
+        ```
 
     <!-- ![stack](https://cs.lmu.edu/~ray/images/stack.gif) -->
 
