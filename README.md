@@ -78,13 +78,37 @@
     - 지역변수 : 중괄호 안에서 선언된 변수, 선언된 지역 내에서만 유효
 
 ## 2일차
-- 파이썬 기초 복습
+1. 파이썬 기초 복습
 
 ![자료구조](https://t1.daumcdn.net/cfile/tistory/23202B4C53FDC5600C)
 
-- 파이썬 자료구조
-    - 선형리스트(배열)
-    - 단순 연결 리스트 = 파이썬의 list와 동일
+2. 선형리스트(배열)
+
+    - 맨 끝에 빈칸 확보
+    - 삽입하고자 하는 공간에 빈칸이 없으므로, 삽입하고자 하는 공간 뒤에 있는 요소들을 한칸씩 뒤로 옮김
+    - 빈자리에 요소 삽입
+    - 데이터 삭제시 빈칸을 그대로 두지않고 뒤의 요소들을 앞으로 한칸씩 이동
+
+        ```
+        def insert_data(pos, friend):
+            if pos < 0 or pos > len(kakaotalk): 
+                print('데이터 삽입범위 초과')
+                return # 함수를 빠져나감
+    
+        kakaotalk.append(None) # 빈칸추가
+        size = len(kakaotalk) # 배열의 현재크기
+        # 삽입위치까지 데이터를 하나씩 뒤로 보냄
+        for i in range(size-1, pos, -1): # 역순으로 맨뒤에서 부터
+            kakaotalk[i] = kakaotalk[i-1]
+            kakaotalk[i-1] = None
+
+        kakaotalk[pos] = friend
+
+        insert_data(2, '솔라') # ['다현', '정연', '솔라', '쯔위', '사나', '지효']
+        insert_data(6, '문별') # ['다현', '정연', '솔라', '쯔위', '사나', '지효', '문별']
+        ```
+
+3. 단순 연결 리스트 = 파이썬의 list와 동일
 
     ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png)
 
