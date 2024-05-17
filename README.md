@@ -269,7 +269,9 @@
             print(queue[i], end=' <- ')
 
         print('[in]') # [out]  <- 화사 <- 솔라 <- 문별 <- None <- None <- [in]
-
+        ```
+        
+        ```
         # dequeue 구현
         queue = ["화사", "솔라", "문별", None, None]
         front = -1
