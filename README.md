@@ -89,7 +89,7 @@
     - 빈자리에 요소 삽입
 
         ```
-        kakaotalk = ['다현', '정연', '쯔위', '사나', '지효']
+        kakaotalk = ["다현", "정연", "쯔위", "사나", "지효"]
 
         # 선형리스트에 데이터를 삽입하는 함수
         def insert_data(pos, friend):
@@ -97,7 +97,7 @@
                 print('데이터 삽입범위 초과')
                 return # 함수를 빠져나감
     
-            kakaotalk.append(None) # 빈칸추가, ['다현', '정연', '쯔위', '사나', '지효', None]
+            kakaotalk.append(None) # 빈칸추가, ["다현", "정연", "쯔위", "사나", "지효", None]
             size = len(kakaotalk) # 배열의 현재크기
 
             # 삽입위치까지 데이터를 하나씩 뒤로 보냄
@@ -108,7 +108,7 @@
             kakaotalk[pos] = friend
         
         # 사용 예시
-        insert_data(2, '솔라') # ['다현', '정연', '솔라', '쯔위', '사나', '지효']
+        insert_data(2, '솔라') # ["다현", "정연", "솔라", "쯔위", "사나", "지효"]
         ```
 
     - 데이터 삭제시 빈칸을 그대로 두지않고 뒤의 요소들을 앞으로 한칸씩 이동
@@ -121,7 +121,7 @@
                 return
     
             size = len(kakaotalk)
-            kakaotalk[pos] = None # 데이터 삭제, ['다현', '정연', None, '쯔위', '사나', '지효']
+            kakaotalk[pos] = None # 데이터 삭제, ["다현", "정연", None, "쯔위", "사나", "지효"]
 
             for i in range(pos+1, size): 
                 kakaotalk[i-1] = kakaotalk[i] # None을 배열 끝으로 옮기기
@@ -130,7 +130,7 @@
             del(kakaotalk[size-1]) # 배열의 맨 마지막값 삭제
         
         # 사용 예시
-        delete_data(2) # ['다현', '정연', '쯔위', '사나', '지효']
+        delete_data(2) # ["다현", "정연", "쯔위", "사나", "지효"]
         ```
 
 3. 단순 연결 리스트 = 파이썬의 list와 동일
@@ -152,15 +152,15 @@
                     self.link = None
             
             # 노드 생성 및 확인
-            node1 = Node('다현')
+            node1 = Node("다현")
             print(node1.data, end = ' ')
             print(node1.link) # 다현 None
 
             # 노드 연결
-            node2 = Node('정연')
+            node2 = Node("정연")
             node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
             ...
-            node5 = Node('지효')
+            node5 = Node("지효")
             node4.link = node5
 
             # 단순연결리스트 출력방법
@@ -174,7 +174,7 @@
         - 노드 삽입과정
             ```
             # 다현 정연 재남 쯔위 사나 지효
-            newNode = Node('재남')
+            newNode = Node("재남")
             newNode.link = node2.link
             node2.link = newNode
             ```
@@ -191,15 +191,59 @@
     - 연결리스트 : 메모리 공간 오버헤드는 존재하지만, 삽입/삭제 시 처리시간 최적화
 
 ## 3일차
-- 파이썬 자료구조
-    - 단순 연결 리스트 다시
-    - 원형 연결 리스트(패스) : 마지막 노드가 첫 노드와 연결
-    - 스택 : Last In First Out (LIFO)
-        - pop - list.pop()
-        - push - list.append() 와 동일
+1. 단순 연결 리스트 복습
 
-    ![stack](https://cs.lmu.edu/~ray/images/stack.gif)
-    - 큐 : First In First Out (FIFO)
+2. 원형 연결 리스트(패스) : 마지막 노드가 첫 노드와 연결
+
+3. 스택 : Last In First Out (LIFO)
+
+    - 삽입과 추출이 한쪽에서만 진행됨
+    - 데이터를 삽입하는 동작을 `push`, 데이터를 추출하는 동작을 `pop`이라고 함
+    - 현재 스택에 들어있는 가장 위의 데이터 위치를 `top`
+    - 스택은 배열형태로 구현
+
+    ```
+    # 스택 선언
+    stack = [None for _ in range(5)]
+    top = -1
+
+    # push
+    top += 1 # 0
+    stack[top] = "커피"
+    top += 1 # 1
+    stack[top] = "녹차"
+    top += 1 # 2
+    stack[top] = "꿀물"
+
+    # 현재 스택확인
+    for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
+        print(stack[i]) # 커피-> 녹차 -> 꿀물 -> None -> None 순으로 쌓임
+    ```
+
+    ```
+    # pop
+    stack = ["커피", "녹차", "꿀물", None, None]
+
+    data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
+    stack[top] = None
+    top -= 1
+
+    data = stack[top] # 녹차
+    stack[top] = None
+    top -= 1
+
+    data = stack[top] # 커피
+    stack[top] = None
+    top -= 1
+
+    # 현재 스택확인
+    for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
+    print(stack[i]) # None None None None None 순
+    ```
+
+    <!-- ![stack](https://cs.lmu.edu/~ray/images/stack.gif) -->
+
+4. 큐 : First In First Out (FIFO)
 
     ![queue](https://raw.githubusercontent.com/guswlrla/ds-and-algorithm/main/images/queue.png)
     
