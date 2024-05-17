@@ -136,50 +136,50 @@
     
         - 단순 연결 리스트 생성과정
 
-            ```
-            # 노드 생성(노드는 클래스를 사용하여 구현)
-            class Node():
-                # data, link 두 개의 멤버변수 존재
-                # 생성자 추가 
-                def __init__(self): # 생성자 함수 : 데이터형을 생성할 때, 자동으로 실행
-                    self.data = None
-                    self.link = None
+        ```
+        # 노드 생성(노드는 클래스를 사용하여 구현)
+        class Node():
+            # data, link 두 개의 멤버변수 존재
+            # 생성자 추가 
+            def __init__(self): # 생성자 함수 : 데이터형을 생성할 때, 자동으로 실행
+                self.data = None
+                self.link = None
             
-            # 노드 생성 및 확인
-            node1 = Node("다현")
-            print(node1.data, end = ' ')
-            print(node1.link) # 다현 None
+        # 노드 생성 및 확인
+        node1 = Node("다현")
+        print(node1.data, end = ' ')
+        print(node1.link) # 다현 None
 
-            # 노드 연결
-            node2 = Node("정연")
-            node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
-            ...
-            node5 = Node("지효")
-            node4.link = node5
+        # 노드 연결
+        node2 = Node("정연")
+        node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
+        ...
+        node5 = Node("지효")
+        node4.link = node5
 
-            # 단순연결리스트 출력방법
-            current = node1
-            print(current.data, end = ' ') # 첫 번째 노드를 현재(current)로 지정하고 출력
-            while current.link != None: # 노드가 비어있지 않은동안
-                current = current.link # 다음 노드를 현재노드로 지정
-                print(current.data, end = ' ')
-            ```
+        # 단순연결리스트 출력방법
+        current = node1
+        print(current.data, end = ' ') # 첫 번째 노드를 현재(current)로 지정하고 출력
+        while current.link != None: # 노드가 비어있지 않은동안
+            current = current.link # 다음 노드를 현재노드로 지정
+            print(current.data, end = ' ')
+        ```
 
         - 노드 삽입과정
         
-            ```
-            # 다현 정연 재남 쯔위 사나 지효
-            newNode = Node("재남")
-            newNode.link = node2.link
-            node2.link = newNode
-            ```
+        ```
+        # 다현 정연 재남 쯔위 사나 지효
+        newNode = Node("재남")
+        newNode.link = node2.link
+        node2.link = newNode
+        ```
 
         - 노드 삭제과정
 
-            ```
-            node2.link = node3.link # 쯔위의 링크를 정연의 링크로 복사
-            del(node3) # 쯔위 삭제
-            ```
+        ```
+        node2.link = node3.link # 쯔위의 링크를 정연의 링크로 복사
+        del(node3) # 쯔위 삭제
+        ```
 
 4. 선형리스트와 연결리스트의 차이
 
