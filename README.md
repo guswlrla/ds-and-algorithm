@@ -170,9 +170,18 @@
             current = current.link # 다음 노드를 현재노드로 지정
             print(current.data, end = ' ')
         ```
+
     - 노드 삽입과정
         ```
+        newNode = Node('재남')
+        newNode.link = node2.link
+        node2.link = newNode
+        ```
 
+    - 노드 삭제과정
+        ```
+        node2.link = node3.link # 쯔위의 링크를 정연의 링크로 복사
+        del(node3) # 쯔위 삭제
         ```
 
 4. 선형리스트와 연결리스트의 차이
