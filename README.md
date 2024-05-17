@@ -175,7 +175,7 @@
             ```
 
         - 노드 삭제과정
-        
+
             ```
             node2.link = node3.link # 쯔위의 링크를 정연의 링크로 복사
             del(node3) # 쯔위 삭제
@@ -220,26 +220,26 @@
 
         - 추출 과정
 
-        ```
-        # pop
-        stack = ["커피", "녹차", "꿀물", None, None]
+            ```
+            # pop
+            stack = ["커피", "녹차", "꿀물", None, None]
 
-        data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
-        stack[top] = None
-        top -= 1
+            data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
+            stack[top] = None
+            top -= 1
 
-        data = stack[top] # 녹차
-        stack[top] = None
-        top -= 1
+            data = stack[top] # 녹차
+            stack[top] = None
+            top -= 1
 
-        data = stack[top] # 커피
-        stack[top] = None
-        top -= 1
+            data = stack[top] # 커피
+            stack[top] = None
+            top -= 1
 
-        # 현재 스택확인
-        for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
-            print(stack[i]) # None None None None None 순
-        ```
+            # 현재 스택확인
+            for i in range(len(stack)-1, -1, -1): # 4~0으로 역순
+                print(stack[i]) # None None None None None 순
+            ```
 
     <!-- ![stack](https://cs.lmu.edu/~ray/images/stack.gif) -->
 
