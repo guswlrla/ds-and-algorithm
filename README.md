@@ -89,7 +89,7 @@
     - 빈자리에 요소 삽입
 
         ```
-        kakaotalk = ["다현", "정연", "쯔위", "사나", "지효"]
+        kakaotalk = ['다현', '정연', '쯔위', '사나', '지효']
 
         # 선형리스트에 데이터를 삽입하는 함수
         def insert_data(pos, friend):
@@ -97,7 +97,7 @@
                 print('데이터 삽입범위 초과')
                 return # 함수를 빠져나감
     
-            kakaotalk.append(None) # 빈칸추가, ["다현", "정연", "쯔위", "사나", "지효", None]
+            kakaotalk.append(None) # 빈칸추가, ['다현', '정연', '쯔위', '사나', '지효', None]
             size = len(kakaotalk) # 배열의 현재크기
 
             # 삽입위치까지 데이터를 하나씩 뒤로 보냄
@@ -118,7 +118,7 @@
                 return
     
             size = len(kakaotalk)
-            kakaotalk[pos] = None # 데이터 삭제, ["다현", "정연", None, "쯔위", "사나", "지효"]
+            kakaotalk[pos] = None # 데이터 삭제, ['다현', '정연', None, '쯔위', '사나', '지효']
 
             for i in range(pos+1, size): 
                 kakaotalk[i-1] = kakaotalk[i] # None을 배열 끝으로 옮기기
@@ -146,15 +146,15 @@
                 self.link = None
             
         # 노드 생성 및 확인
-        node1 = Node("다현")
+        node1 = Node('다현')
         print(node1.data, end = ' ')
         print(node1.link) # 다현 None
 
         # 노드 연결
-        node2 = Node("정연")
+        node2 = Node('정연')
         node1.link = node2 # 첫 번째 노드의 링크에 두 번째 노드를 넣어 연결
         ...
-        node5 = Node("지효")
+        node5 = Node('지효')
         node4.link = node5
 
         # 단순연결리스트 출력방법
@@ -169,7 +169,7 @@
         
         ```
         # 다현 정연 재남 쯔위 사나 지효
-        newNode = Node("재남")
+        newNode = Node('재남')
         newNode.link = node2.link
         node2.link = newNode
         ```
@@ -211,11 +211,11 @@
         ```
         # push
         top += 1 # 0
-        stack[top] = "커피"
+        stack[top] = '커피'
         top += 1 # 1
-        stack[top] = "녹차"
+        stack[top] = '녹차'
         top += 1 # 2
-        stack[top] = "꿀물"
+        stack[top] = '꿀물'
 
         # 현재 스택확인
         for i in range(len(stack)-1,-1,-1): # 4~0으로 역순
@@ -226,7 +226,7 @@
 
         ```
         # pop
-        stack = ["커피", "녹차", "꿀물", None, None]
+        stack = ['커피', '녹차', '꿀물', None, None]
 
         data = stack[top] # top의 데이터를 밖으로 추출, 꿀물
         stack[top] = None
@@ -263,7 +263,7 @@
         - enqueue 구현과정
         ```
         rear += 1
-        queue[rear] = "화사"
+        queue[rear] = '화사'
         rear += 1
         queue[rear] = '솔라'
         rear += 1
@@ -278,7 +278,7 @@
         
         - dequeue 구현과정
         ```
-        queue = ["화사", "솔라", "문별", None, None]
+        queue = ['화사', '솔라', '문별', None, None]
         front = -1
         rear = 2
 
@@ -317,17 +317,72 @@
     - 자식 노드의 개수를 `차수(Degree)`라고 함
     - 트리는 `왼쪽 자식(Left child)`과 `오른쪽 자식(Right Child)`으로 구성
 
-    - 클래스를 이용한 표현
+        - 이진트리 생성과정
+
         ```
         class TreeNode():
             left = data = right = None
             def __init__(self) -> None:
                 self.left = self.right = self.data = None
+
+        node1 = TreeNode()
+        node1.data = '화사'
+
+        node2 = TreeNode()
+        node2.data = '솔라'
+        node1.left = node2
+
+        node3 = TreeNode()
+        node3.data = '문별'
+        node1.right = node3
+
+        node4 = TreeNode()
+        node4.data = '휘인'
+        node2.left = node4
+
+        node5 = TreeNode()
+        node5.data = '쯔위'
+        node2.right = node5
+
+        node6 = TreeNode()
+        node6.data = '선미'
+        node3.left = node6
         ```
 
-    - 
+        - 이진트리 순회(traversal)
+            - 전위순회 : 데이터를 먼저 처리
+            ```
+            def preorder(node):
+                if node == None: return
 
-    ![이진트리](https://kahee.github.io//assets/post_img/tree3.png)
+                print(node.data, end='->')
+                preorder(node.left)
+                preorder(node.right)
+            ```
+
+            - 중위순회 : 데이터를 중간에 처리
+
+            ```
+            def inorder(node):
+                if node == None: return
+
+                inorder(node.left)
+                print(node.data, end='->')
+                inorder(node.right)
+            ```
+
+            - 후위순회 : 데이터를 마지막에 처리
+            
+            ```
+            def postorder(node):
+                if node == None: return
+
+                postorder(node.left)
+                postorder(node.right)
+                print(node.data, end='->')
+            ```
+
+    <!-- ![이진트리](https://kahee.github.io//assets/post_img/tree3.png) -->
 
 ## 5일차
 - 파이썬 자료구조/알고리즘
