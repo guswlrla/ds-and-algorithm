@@ -138,7 +138,7 @@
     - 데이터와 링크로 구성된 항목인 `노드(Node)`로 구성
     - 단순 연결 리스트는 첫 번째 노드를 가리키는 `헤드(Head)`를 사용(헤드를 이용하여 처음부터 다시 진행가능)
 
-        ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png)
+        <!-- ![연결리스트](https://upload.wikimedia.org/wikipedia/commons/9/9c/Single_linked_list.png) -->
     
     - 단순 연결 리스트 생성과정
 
